@@ -12,7 +12,7 @@ demonstrator, *Pongduino*.
 I2C bus is also called Two Wire Interface (TWI) as in the Arduino 
 reference/librairy.
 
-an online odcumentation [here](http://blasterbug.github.io/Camduino "Camduino doc on line").
+An online documentation [here](http://blasterbug.github.io/Camduino "Camduino doc on line").
 
 ## Arduino setup
 
@@ -21,11 +21,11 @@ to 7 and run *CMU_Tracker_I2C.ino*.
 
 #### The wire
 
-To connect an Arduino with a NXT, I made my own wire.
-
 ![Custom NXT-to-Arduino wire](http://blasterbug.github.io/Camduino/CustomNXT-to-ArduinoWire.jpg
 	"Custom NXT-to-Arduino wire")
 
+To connect an Arduino with a NXT, make your own wire. NXT (black) wires, are made
+like this : 
 -	white : ground
 -	black : ground
 -	red : analog
@@ -33,7 +33,7 @@ To connect an Arduino with a NXT, I made my own wire.
 -	blue : SDA (Arduino pin A4)
 -	yellow : SCL (Arduino pin A5)
 
-NXT can't supply enought energy for Arduino, so use an external source. 
+NXT can not supply enought energy for Arduino, so use an external source. 
 
 ## Trampoline settings
 
