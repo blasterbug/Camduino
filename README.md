@@ -22,7 +22,7 @@ to 7 and run *CMU_Tracker_I2C.ino*.
 
 To connect an Arduino with a NXT, I made my own wire.
 
-![Custom NXT-to-Arduino wire](../../doc/CustomNXT-to-ArduinoWire.jpg 
+![Custom NXT-to-Arduino wire](CustomNXT-to-ArduinoWire.jpg 
 	"Custom NXT-to-Arduino wire")
 
 -	white : ground
