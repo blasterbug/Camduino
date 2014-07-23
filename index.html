@@ -78,30 +78,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Camduino Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Camduino is an interface to speak with Arduino over <a href="https://en.wikipedia.org/wiki/I2c" title="I2C - Wikipedia">I2C</a>. You can get a red ball position and state of proximity sensors. The main goal of this project is to supply an easy-to-use interface to communicate with Arduino as part of <a href="http://anr-impro.irccyn.ec-nantes.fr/#description" title="ANR ImpRo">ImpRo</a> project demonstrator, <em>Pongduino</em>.</p>
+<div class="textblock"><p>Camduino is an interface to speak with Arduino over <a href="https://en.wikipedia.org/wiki/I2c" title="I2C - Wikipedia">I2C</a>. You can get a red ball position and state of proximity sensors. The main goal of this project is to supply an easy-to-use interface to communicate with Arduino as part of <a href="http://anr-impro.irccyn.ec-nantes.fr/#description" title="ANR ImpRo">ImpRo</a> project demonstrator.</p>
 <p>I2C bus is also called Two Wire Interface (TWI) as in the Arduino reference/librairy.</p>
-<p>An online documentation <a href="http://blasterbug.github.io/Camduino" title="Camduino doc on line">here</a>.</p>
+<p><a href="http://blasterbug.github.io/Camduino" title="Camduino doc online">Online doc</a></p>
+<p><a href="https://github.com/blasterbug/Camduino" title="Camduino on GitHub">Download librairy</a></p>
 <h2>Arduino setup</h2>
-<p>Arduino board must be connected to CMUcam4 and five presence sensors on pins 3 to 7 and run <em>CMU_Tracker_I2C.ino</em>.</p>
-<h4>The wire</h4>
-<div class="image">
-<img src="http://blasterbug.github.io/Camduino/CustomNXT-to-ArduinoWire.jpg"  alt="Custom NXT-to-Arduino wire" title="Custom NXT-to-Arduino wire"/>
-</div>
-<p>To connect an Arduino with a NXT, make your own wire. NXT (black) wires, are made like this :</p><ul>
-<li>white : ground</li>
-<li>black : ground</li>
-<li>red : analog</li>
-<li>green : 4.3V</li>
-<li>blue : SDA (Arduino pin A4)</li>
-<li>yellow : SCL (Arduino pin A5)</li>
+<p>Arduino board must be connected to CMUcam4 and five presence sensors on pins 3 to 7 and run <a href="https://github.com/blasterbug/Camduino/blob/master/Arduino%20Program/CMU_Tracker_I2C.ino" title="Camduino program">CMU_Tracker_I2C.ino</a>. The Arduino program is supplied with the librairy in <em>Arduino program</em> folder.</p>
+<p>You can compile and upload the program to the board using Arduino IDE. You must intall <a href="http://cmucam.org/docs/cmucam4/arduino_api/" title="CMUcam4 Arduino Interface Library">CMUcam4 Arduino library</a> first. If you can not reprogram your Arduino when the CMUcam4 is connected to your Arduino you can either disconnect the CMUcam4 from your Arduino or you can put the CMUcam4 into halt mode :</p><ul>
+<li>Press and hold the reset button on the CMUcam4</li>
+<li>Press and hold the user button on the CMUcam4</li>
+<li>Release the reset button (do not release the user button)</li>
+<li>Wait until the red auxiliary LED turns on (2 seconds)</li>
+<li>Release the user button</li>
+<li>The CMUcam4 is now halted indefinitely</li>
 </ul>
-<p>NXT can not supply enought energy for Arduino, so use an external source.</p>
+<p>Press the reset button to exit halt mode.</p>
+<h4>Connect NXT and Arduino</h4>
+<p>The communication is based on I2C bus, so you have to connect them with a wire but such wires does not exist. Make your own RJ12 <em>NXT to Arduino</em> wire, it's easy. Here there is some help to do so.</p>
+<div class="image">
+<img src="http://blasterbug.github.io/Camduino/NXT_black_wire.png"  alt="NXT cutted off wire" title="NXT cutted off wire"/>
+</div>
+<p>NXT uses RJ12 wires made like this :</p><ul>
+<li>white : analog</li>
+<li>black : ground</li>
+<li>red : ground</li>
+<li>green : 4.3V</li>
+<li>yellow : I2C clock line</li>
+<li>blue : I2C data line</li>
+</ul>
+<p>Connect the red or the black wire to Arduino ground pin, the yellow to A5 pin and the blue one to A4.</p>
+<p><b>Be carefull</b>, NXT can not supply enought power to Arduino, CMUcam4 and five presence sensors, so use an external source for the board.</p>
 <h2>Trampoline settings</h2>
 <p>The Trampoline revision running on the NXT must use the custom I2C driver "from
-Armel". This driver is supplied with the Camduino library.</p>
+Armel". This driver is supplied with the Camduino library in <em>I2C driver</em> folder.</p>
 <p>Modifying the driver at your own risk.</p>
 <h4>Arduino port and NXT</h4>
-<p>When calling <code>init_camduino(NXT_PORT_S#)</code> if you're <b>NOT</b> using <b>NXT_PORT_S4</b>, you should change it on the driver file i2c.c in <em>Trampolie_folder</em>/machines/arm/nxt/drivers/lejos_nxj/src/nxtvm/platform/nxt/i2c.c</p>
+<p>When calling <code>init_camduino(NXT_PORT_S#)</code> if you do <b>NOT</b> use <b>NXT_PORT_S4</b>, you should change it on the driver file i2c.c in <em>Trampolie_folder</em>/machines/arm/nxt/drivers/lejos_nxj/src/nxtvm/platform/nxt/i2c.c</p>
 <h4>Usage</h4>
 <ul>
 <li>First, include <code><a class="el" href="d2/d36/camduino_8h.html">camduino.h</a></code> in your oil and C files.</li>
@@ -112,7 +124,7 @@ Armel". This driver is supplied with the Camduino library.</p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 23 2014 14:11:24 for Camduino by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 23 2014 15:44:46 for Camduino by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
