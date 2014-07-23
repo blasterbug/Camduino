@@ -1,0 +1,46 @@
+Camduino is an interface to speak with Arduino over \href{https://en.wikipedia.org/wiki/I2c}{\tt I2\+C}. You can get a red ball position and state of proximity sensors. The main goal of this project is to supply an easy-\/to-\/use interface to communicate with Arduino as part of \href{http://anr-impro.irccyn.ec-nantes.fr/#description}{\tt Imp\+Ro} project demonstrator, {\itshape Pongduino}.
+
+I2\+C bus is also called Two Wire Interface (T\+W\+I) as in the Arduino reference/librairy.
+
+\subsubsection*{Arduino setup}
+
+Arduino board must be connected to C\+M\+Ucam4 and five presence sensors on pins 3 to 7 and run {\itshape C\+M\+U\+\_\+\+Tracker\+\_\+\+I2\+C.\+ino}.
+
+\subparagraph*{The wire}
+
+To connect an Arduino with a N\+X\+T, I made my own wire.
+
+
+
+
+\begin{DoxyItemize}
+\item white \+: ground
+\item black \+: ground
+\item red \+: analog
+\item green \+: 5\+V
+\item blue \+: S\+D\+A (Arduino pin A4)
+\item yellow \+: S\+C\+L (Arduino pin A5)
+\end{DoxyItemize}
+
+N\+X\+T can't supply enought energy for Arduino, so use an external source.
+
+\subsubsection*{Trampoline settings}
+
+The Trampoline revision running on the N\+X\+T must use the custom I2\+C driver \char`\"{}from
+\+Armel\char`\"{}. This driver is supplied with the Camduino library.
+
+Modifying the driver at your own risk.
+
+\subparagraph*{Arduino port and N\+X\+T}
+
+When calling {\ttfamily init\+\_\+camduino(N\+X\+T\+\_\+\+P\+O\+R\+T\+\_\+\+S\#)} if you're {\bfseries N\+O\+T} using {\bfseries N\+X\+T\+\_\+\+P\+O\+R\+T\+\_\+\+S4}, you should change it on the driver file i2c.\+c in {\itshape Trampolie\+\_\+folder}/machines/arm/nxt/drivers/lejos\+\_\+nxj/src/nxtvm/platform/nxt/i2c.c
+
+\subparagraph*{Usage}
+
+
+\begin{DoxyItemize}
+\item First, include {\ttfamily \hyperlink{camduino_8h}{camduino.\+h}} in your oil and C files.
+\item Initiate the driver library by calling {\ttfamily init\+\_\+camduino(\+N\+X\+T\+\_\+\+P\+O\+R\+T\+\_\+\+S4)}, eventualy, initiate other I2\+C devices and finally call {\ttfamily i2c\+\_\+init()}.
+\item Then you get data from {\ttfamily Camduino}.
+\item Code and think hard. Good luck! 
+\end{DoxyItemize}

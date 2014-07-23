@@ -1,0 +1,90 @@
+\hypertarget{camduino_8c}{\subsection{camduino.\+c File Reference}
+\label{camduino_8c}\index{camduino.\+c@{camduino.\+c}}
+}
+{\ttfamily \#include \char`\"{}camduino.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}nxt\+\_\+avr.\+h\char`\"{}}\\*
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{camduino_8c_a7465a8b7e13ad1affa1b34b51a9edeca}{init\+\_\+camduino} (int i2c\+\_\+port)
+\item 
+void \hyperlink{camduino_8c_a10b2799342f2e4f0ccdabc0d5641a20a}{get\+\_\+ball\+\_\+position} (struct \hyperlink{structposition}{position} $\ast$ball)
+\item 
+int \hyperlink{camduino_8c_a655dc011feef1f3d771a0b24a1f69e17}{object\+\_\+detected} ()
+\item 
+int \hyperlink{camduino_8c_ac9e0d14e6f57ec8aa92b8d762f75646a}{get\+\_\+pstate} (enum \hyperlink{camduino_8h_ac6044667be7a5fc4e3ac4a15da63071f}{psensor} sensor)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+\hypertarget{camduino_8h_desc}{}\subsubsection{File description}\label{camduino_8h_desc}
+Librairy to get some data from an Arduino over I2\+C. C\+M\+Ucam4 must be connect on it and Arduino must run \char`\"{}\+C\+M\+U\+\_\+\+Tracker\+\_\+\+I2\+C\char`\"{} program, distance sensors must be connected to the board too.\hypertarget{camduino_8h_copyright}{}\subsubsection{Copyright}\label{camduino_8h_copyright}
+Trampoline is copyright (c) I\+R\+C\+Cy\+N 2005-\/2014 Trampoline is protected by the French intellectual property law.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\+N\+U General Public License as published by the Free Software Foundation; version 2 of the License.
+
+This program is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+U\+T A\+N\+Y W\+A\+R\+R\+A\+N\+T\+Y; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+T\+Y or F\+I\+T\+N\+E\+S\+S F\+O\+R A P\+A\+R\+T\+I\+C\+U\+L\+A\+R P\+U\+R\+P\+O\+S\+E. See the G\+N\+U General Public License for more details.
+
+You should have received a copy of the G\+N\+U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\+A 02110-\/1301, U\+S\+A.\hypertarget{camduino_8h_infos}{}\subsubsection{File informations}\label{camduino_8h_infos}
+\begin{DoxyDate}{Date}
+2014/07/21 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Benjamin Sientzoff 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{camduino_8c_a10b2799342f2e4f0ccdabc0d5641a20a}{\index{camduino.\+c@{camduino.\+c}!get\+\_\+ball\+\_\+position@{get\+\_\+ball\+\_\+position}}
+\index{get\+\_\+ball\+\_\+position@{get\+\_\+ball\+\_\+position}!camduino.\+c@{camduino.\+c}}
+\paragraph[{get\+\_\+ball\+\_\+position}]{\setlength{\rightskip}{0pt plus 5cm}void get\+\_\+ball\+\_\+position (
+\begin{DoxyParamCaption}
+\item[{struct {\bf position} $\ast$}]{ball}
+\end{DoxyParamCaption}
+)}}\label{camduino_8c_a10b2799342f2e4f0ccdabc0d5641a20a}
+Fill a position strucuture to get ball position 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ball} & A reference to the struct to fill \\
+\hline
+\end{DoxyParams}
+\hypertarget{camduino_8c_ac9e0d14e6f57ec8aa92b8d762f75646a}{\index{camduino.\+c@{camduino.\+c}!get\+\_\+pstate@{get\+\_\+pstate}}
+\index{get\+\_\+pstate@{get\+\_\+pstate}!camduino.\+c@{camduino.\+c}}
+\paragraph[{get\+\_\+pstate}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+pstate (
+\begin{DoxyParamCaption}
+\item[{enum {\bf psensor}}]{sensor}
+\end{DoxyParamCaption}
+)}}\label{camduino_8c_ac9e0d14e6f57ec8aa92b8d762f75646a}
+Get an given presence sensor state 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sensor} & Name of the presence sensor to examine \\
+\hline
+\mbox{\tt out}  & {\em int} & state of the sensor, return 0 if no detected object, else 1 \\
+\hline
+\end{DoxyParams}
+\hypertarget{camduino_8c_a7465a8b7e13ad1affa1b34b51a9edeca}{\index{camduino.\+c@{camduino.\+c}!init\+\_\+camduino@{init\+\_\+camduino}}
+\index{init\+\_\+camduino@{init\+\_\+camduino}!camduino.\+c@{camduino.\+c}}
+\paragraph[{init\+\_\+camduino}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+camduino (
+\begin{DoxyParamCaption}
+\item[{int}]{i2c\+\_\+port}
+\end{DoxyParamCaption}
+)}}\label{camduino_8c_a7465a8b7e13ad1affa1b34b51a9edeca}
+Initiate Arduino driver, don't forget to call i2c\+\_\+init() after. Set up i2c port, tram communication and {\itshape power} supply. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i2c\+\_\+port} & N\+X\+T port where Arduino is connected \\
+\hline
+\end{DoxyParams}
+\hypertarget{camduino_8c_a655dc011feef1f3d771a0b24a1f69e17}{\index{camduino.\+c@{camduino.\+c}!object\+\_\+detected@{object\+\_\+detected}}
+\index{object\+\_\+detected@{object\+\_\+detected}!camduino.\+c@{camduino.\+c}}
+\paragraph[{object\+\_\+detected}]{\setlength{\rightskip}{0pt plus 5cm}int object\+\_\+detected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{camduino_8c_a655dc011feef1f3d771a0b24a1f69e17}
+Get global presence sensors state 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em int} & State of the presence sensors, equals to N\+O\+\_\+\+D\+E\+T\+E\+C\+T\+E\+D\+\_\+\+O\+B\+J\+E\+C\+T if an object is not detected, else return a different value \\
+\hline
+\end{DoxyParams}
