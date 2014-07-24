@@ -14,7 +14,7 @@ reference/librairy.
 
 [Online doc](http://blasterbug.github.io/Camduino "Camduino doc online")
 
-[Download librairy](https://github.com/blasterbug/Camduino/archive/master.zip "download Camduino library from GitHub")
+[Download librairy](http://github.com/blasterbug/Camduino/releases/latest "download Camduino library from GitHub")
 
 ## Arduino setup
 
