@@ -14,7 +14,7 @@ reference/librairy.
 
 [Online doc](http://blasterbug.github.io/Camduino "Camduino doc online")
 
-[Download librairy](https://github.com/blasterbug/Camduino "Camduino on GitHub")
+[Download librairy](https://github.com/blasterbug/Camduino/archive/master.zip "download Camduino library from GitHub")
 
 ## Arduino setup
 
@@ -27,6 +27,7 @@ You can compile and upload the program to the board using Arduino IDE. You must 
 If you can not reprogram your Arduino when the CMUcam4 is connected to your 
 Arduino you can either disconnect the CMUcam4 from your Arduino or you can put 
 the CMUcam4 into halt mode : 
+
 -	Press and hold the reset button on the CMUcam4
 -	Press and hold the user button on the CMUcam4
 -	Release the reset button (do not release the user button)
@@ -45,7 +46,8 @@ Here there is some help to do so.
 
 ![NXT cutted off wire](http://blasterbug.github.io/Camduino/NXT_black_wire.png "NXT cutted off wire")
 
-NXT uses RJ12 wires made like this : 
+NXT uses RJ12 wires made like this :
+
 -	white : analog
 -	black : ground
 -	red : ground
