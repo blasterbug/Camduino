@@ -81,10 +81,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>Camduino is an interface to speak with Arduino over <a href="https://en.wikipedia.org/wiki/I2c" title="I2C - Wikipedia">I2C</a>. You can get a red ball position and state of proximity sensors. The main goal of this project is to supply an easy-to-use interface to communicate with Arduino as part of <a href="http://anr-impro.irccyn.ec-nantes.fr/#description" title="ANR ImpRo">ImpRo</a> project demonstrator.</p>
 <p>I2C bus is also called Two Wire Interface (TWI) as in the Arduino reference/librairy.</p>
 <p><a href="http://blasterbug.github.io/Camduino" title="Camduino doc online">Online doc</a></p>
-<p><a href="https://github.com/blasterbug/Camduino" title="Camduino on GitHub">Download librairy</a></p>
+<p><a href="https://github.com/blasterbug/Camduino/archive/master.zip" title="download Camduino library from GitHub">Download librairy</a></p>
 <h2>Arduino setup</h2>
 <p>Arduino board must be connected to CMUcam4 and five presence sensors on pins 3 to 7 and run <a href="https://github.com/blasterbug/Camduino/blob/master/Arduino%20Program/CMU_Tracker_I2C.ino" title="Camduino program">CMU_Tracker_I2C.ino</a>. The Arduino program is supplied with the librairy in <em>Arduino program</em> folder.</p>
-<p>You can compile and upload the program to the board using Arduino IDE. You must intall <a href="http://cmucam.org/docs/cmucam4/arduino_api/" title="CMUcam4 Arduino Interface Library">CMUcam4 Arduino library</a> first. If you can not reprogram your Arduino when the CMUcam4 is connected to your Arduino you can either disconnect the CMUcam4 from your Arduino or you can put the CMUcam4 into halt mode :</p><ul>
+<p>You can compile and upload the program to the board using Arduino IDE. You must intall <a href="http://cmucam.org/docs/cmucam4/arduino_api/" title="CMUcam4 Arduino Interface Library">CMUcam4 Arduino library</a> first. If you can not reprogram your Arduino when the CMUcam4 is connected to your Arduino you can either disconnect the CMUcam4 from your Arduino or you can put the CMUcam4 into halt mode :</p>
+<ul>
 <li>Press and hold the reset button on the CMUcam4</li>
 <li>Press and hold the user button on the CMUcam4</li>
 <li>Release the reset button (do not release the user button)</li>
@@ -98,7 +99,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="http://blasterbug.github.io/Camduino/NXT_black_wire.png"  alt="NXT cutted off wire" title="NXT cutted off wire"/>
 </div>
-<p>NXT uses RJ12 wires made like this :</p><ul>
+<p>NXT uses RJ12 wires made like this :</p>
+<ul>
 <li>white : analog</li>
 <li>black : ground</li>
 <li>red : ground</li>
@@ -124,7 +126,7 @@ Armel". This driver is supplied with the Camduino library in <em>I2C driver</em>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 23 2014 15:44:46 for Camduino by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 24 2014 09:31:36 for Camduino by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
